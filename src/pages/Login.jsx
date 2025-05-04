@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Form, Button, Container, Card, Alert } from 'react-bootstrap';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -49,8 +49,17 @@ export default function Login() {
               placeholder="Enter password"
             />
           </Form.Group>
-          <Button variant="primary" type="submit" className="w-100">Login</Button>
+          <Button variant="primary" type="submit" className="w-100 mb-3">Login</Button>
         </Form>
+
+        <div className="text-center">
+          <small>
+            Don't have an account?{' '}
+            <Link to="/register" className="text-decoration-none text-success">
+              Register
+            </Link>
+          </small>
+        </div>
       </Card>
     </Container>
   );
